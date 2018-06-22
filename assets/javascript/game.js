@@ -24,49 +24,88 @@ $(document).ready(function () {
 //choose a character and the rest go down as enemies
     
     var pick = false;
-
-    if (pick === false) {
-        $("#charOne").on("click", function () {
+    var defenders = [];
+    
+    $("#charOne").on("click", function () {
+        if (pick === false) {
             console.log(pick);
             console.log("#charOne");
-            $("#charTwo, #charThree, #charFour").appendTo("#enemies")
-            console.log("#enemies");
+            $("#charTwo, #charThree, #charFour").appendTo("#enemies");
+            $("#charTwo, #charThree, #charFour").addClass("newDefender");
             pick = true;
-        });
-    }
+        }
+    });
 
-    if (pick === false) {
-        $("#charTwo").on("click", function () {
+    $("#charTwo").on("click", function () {
+        if (pick === false) {
             console.log(pick);
             console.log("#charTwo");
-            $("#charOne, #charThree, #charFour").appendTo("#enemies")
-            console.log("#enemies");
+            $("#charOne, #charThree, #charFour").appendTo("#enemies");
+            $("#charOne, #charThree, #charFour").addClass("newDefender");
             pick = true;
-        });
-    }
+        }
+    });
 
-    if (pick === false) {
-        $("#charThree").on("click", function () {
+    $("#charThree").on("click", function () {
+        if (pick === false) {
             console.log(pick);
             console.log("#charThree");
-            $("#charOne, #charTwo, #charFour").appendTo("#enemies")
-            console.log("#enemies");
+            $("#charOne, #charTwo, #charFour").appendTo("#enemies");
+            $("#charOne, #charTwo, #charFour").addClass("newDefender");
             pick = true;
-        });
-    }
+        }
+    });
 
-    if (pick === false) {
-        $("#charFour").on("click", function () {
+    $("#charFour").on("click", function () {
+        if (pick === false) {
             console.log(pick);
             console.log("#charFour");
-            $("#charOne, #charTwo, #charThree").appendTo("#enemies")
-            console.log("#enemies");
+            $("#charOne, #charTwo, #charThree").appendTo("#enemies");
+            $("#charOne, #charTwo, #charThree").addClass("newDefender");
             pick = true;
-        });
-    }
+        }
+    });
+  
  
 //pick an enemy, goes down to defender
 
+
+$("#charOne").on("click", function () {
+    if (($( "#charOne" ).hasClass( "newDefender")) === true) {
+        console.log(pick);
+        console.log("#charOne");
+        $("#charOne").appendTo("#defender");
+        console.log("#enemies");
+        
+    }
+});
+
+$("#charTwo").on("click", function () {
+    if (($( "#charTwo" ).hasClass( "newDefender")) === true) {
+        console.log(pick);
+        console.log("#charTwo");
+        $("#charTwo").appendTo("#defender");
+        console.log("#enemies");
+    }
+});
+
+$("#charThree").on("click", function () {
+    if (($( "#charThree" ).hasClass( "newDefender")) === true) {
+        console.log(pick);
+        console.log("#charThree");
+        $("#charThree").appendTo("#defender");
+        console.log("#enemies");
+    } 
+});
+
+$("#charFour").on("click", function () {
+    if (($( "#charFour" ).hasClass( "newDefender")) === true) {
+        console.log(pick);
+        console.log("#charFour");
+        $("#charFour").appendTo("#defender");
+        console.log("#enemies");
+    } 
+});
 
 
 
