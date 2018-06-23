@@ -30,6 +30,7 @@ $(document).ready(function () {
     $("#charTwoInfo").append("HP: " + char2.health);
     $("#charThreeInfo").append("HP: " + char3.health);
     $("#charFourInfo").append("HP: " + char4.health);
+    $( "#attackBtn" ).hide();
 
 //reset
 
@@ -78,8 +79,6 @@ function reset() {
     
     var pick = false;
     var attacker = "";
-
-    $( "#attackBtn" ).hide();
     
     $("#charOne").on("click", function () {
         if (pick === false) {
