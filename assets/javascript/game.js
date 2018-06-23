@@ -132,7 +132,20 @@ $("#attackBtn").on("click", function () {
     console.log("attack" + attacker.attack);
 
     if(defender.health <= 0) {
-        $("#defender").hide();
+        if ((char1.health) <= 0) {
+            $("#charOne").hide();
+        }
+        if ((char2.health) <= 0) {
+            $("#charTwo").hide();
+
+        }
+        if ((char3.health) <= 0) {
+            $("#charThree").hide();
+
+        } if ((char4.health) <= 0) {
+            $("#charFour").hide();
+        }
+        defender = "";
     }
     if(attacker.health <= 0) {
         alert("game over");
