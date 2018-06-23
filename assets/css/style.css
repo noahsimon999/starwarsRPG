@@ -19,3 +19,22 @@ h1 {
     padding-left: 50px;
 }
 
+#stats {
+    color: white;
+}
+
+#attackBtn {
+    height: 50px;
+    width: 100px;
+    background-color: red;
+    color: white;
+}
+
+#charOneHealth {
+    color:white;
+}
+
+#charWrap, #enemies, #charChoice {
+    display: flex;
+    flex-direction: row;
+}
