@@ -20,7 +20,49 @@ $(document).ready(function () {
         health: 250,
         attack: 5
     }
-  
+
+    var wins = 0;
+    var losses = 0;
+//reset
+
+function reset() {
+
+    char1 = {
+        health: 100,
+        attack: 5
+    }
+    
+    char2 = {
+        health: 150,
+        attack: 5
+    }
+
+    char3 = {
+        health: 200,
+        attack: 5
+    }
+
+    char4 = {
+        health: 250,
+        attack: 5
+    }
+
+    pick = false;
+    attacker = "";
+    defender = "";
+    defeated = [];
+
+    $("#charOne, #charTwo, #charThree, #charFour").appendTo("#charChoice");
+    $("#charOne, #charTwo, #charThree, #charFour").removeClass("newDefender");
+    $("#charOne, #charTwo, #charThree, #charFour").show();
+}
+
+
+
+
+
+
+
 //choose a character and the rest go down as enemies
     
     var pick = false;
@@ -122,6 +164,8 @@ $("#charFour").on("click", function () {
 
 //attack enemy, enemy damage is set, player damage increases each hit
 
+var defeated = [];
+
 $("#attackBtn").on("click", function () {
     console.log(defender.health);
     console.log(attacker.health);
@@ -130,25 +174,46 @@ $("#attackBtn").on("click", function () {
     attacker.attack = attacker.attack + Math.round(Math.random()*20);
     console.log("defender" + defender.health);
     console.log("attack" + attacker.attack);
+    console.log("attacker health" + attacker.health)
 
     if(defender.health <= 0) {
         if ((char1.health) <= 0) {
             $("#charOne").hide();
+            defeated.push(char1);
+            console.log(defeated);
         }
         if ((char2.health) <= 0) {
             $("#charTwo").hide();
-
+            defeated.push(char2);
+            console.log(defeated);
         }
         if ((char3.health) <= 0) {
             $("#charThree").hide();
-
-        } if ((char4.health) <= 0) {
+            defeated.push(char3);
+            console.log(defeated);
+        } 
+        if ((char4.health) <= 0) {
             $("#charFour").hide();
+            defeated.push(char3);
+            console.log(defeated);
         }
         defender = "";
+        
+        for ( var i = 0; i < defeated.length; i++) {
+            if (defeated.length === 6) {
+                console.log(defeated);
+                wins++;
+                $("#win").html("Wins: " + wins);
+                reset();
+            }
+        }
     }
+
+
     if(attacker.health <= 0) {
-        alert("game over");
+        losses++;
+        $("#loss").html("Losses: " + losses);
+        reset();
     }
 
 });
