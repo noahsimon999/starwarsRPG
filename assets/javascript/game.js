@@ -7,24 +7,26 @@ $(document).ready(function () {
     }
     
     var char2 = {
-        health: 100,
+        health: 150,
         attack: 5
     }
 
     var char3 = {
-        health: 100,
+        health: 200,
         attack: 5
     }
 
     var char4 = {
-        health: 100,
+        health: 250,
         attack: 5
     }
   
 //choose a character and the rest go down as enemies
     
     var pick = false;
-    var defenders = [];
+    var attacker = "";
+
+    $( "#attackBtn" ).hide();
     
     $("#charOne").on("click", function () {
         if (pick === false) {
@@ -33,6 +35,7 @@ $(document).ready(function () {
             $("#charTwo, #charThree, #charFour").appendTo("#enemies");
             $("#charTwo, #charThree, #charFour").addClass("newDefender");
             pick = true;
+            attacker = char1;
         }
     });
 
@@ -43,6 +46,7 @@ $(document).ready(function () {
             $("#charOne, #charThree, #charFour").appendTo("#enemies");
             $("#charOne, #charThree, #charFour").addClass("newDefender");
             pick = true;
+            attacker = char2;
         }
     });
 
@@ -53,6 +57,7 @@ $(document).ready(function () {
             $("#charOne, #charTwo, #charFour").appendTo("#enemies");
             $("#charOne, #charTwo, #charFour").addClass("newDefender");
             pick = true;
+            attacker = char3;
         }
     });
 
@@ -63,56 +68,79 @@ $(document).ready(function () {
             $("#charOne, #charTwo, #charThree").appendTo("#enemies");
             $("#charOne, #charTwo, #charThree").addClass("newDefender");
             pick = true;
+            attacker = char4;
         }
     });
   
  
 //pick an enemy, goes down to defender
-
+var defender = "";
 
 $("#charOne").on("click", function () {
     if (($( "#charOne" ).hasClass( "newDefender")) === true) {
-        console.log(pick);
-        console.log("#charOne");
-        $("#charOne").appendTo("#defender");
-        console.log("#enemies");
-        
+        if (defender === "") {
+            $("#charOne").appendTo("#defender");
+            defender = char1;
+            $( "#attackBtn" ).show();
+            console.log(defender);
+        }
     }
 });
 
 $("#charTwo").on("click", function () {
     if (($( "#charTwo" ).hasClass( "newDefender")) === true) {
-        console.log(pick);
-        console.log("#charTwo");
-        $("#charTwo").appendTo("#defender");
-        console.log("#enemies");
+        if (defender === "") {
+            $("#charTwo").appendTo("#defender");
+            defender = char2;
+            $( "#attackBtn" ).show();
+            console.log(defender);
+        }
     }
 });
 
 $("#charThree").on("click", function () {
     if (($( "#charThree" ).hasClass( "newDefender")) === true) {
-        console.log(pick);
-        console.log("#charThree");
-        $("#charThree").appendTo("#defender");
-        console.log("#enemies");
+        if (defender === "") {
+            $("#charThree").appendTo("#defender");
+            defender = char3;
+            $( "#attackBtn" ).show();
+            console.log(defender);
+        }
     } 
 });
 
 $("#charFour").on("click", function () {
     if (($( "#charFour" ).hasClass( "newDefender")) === true) {
-        console.log(pick);
-        console.log("#charFour");
-        $("#charFour").appendTo("#defender");
-        console.log("#enemies");
+        if (defender === "") {
+            $("#charFour").appendTo("#defender");
+            defender = char4;
+            $( "#attackBtn" ).show();
+            console.log(defender);
+        }
     } 
 });
 
+//attack enemy, enemy damage is set, player damage increases each hit
+
+$("#attackBtn").on("click", function () {
+    console.log(defender.health);
+    console.log(attacker.health);
+    defender.health = defender.health - attacker.attack;
+    attacker.health = attacker.health - defender.attack;
+    attacker.attack = attacker.attack + Math.round(Math.random()*20);
+    console.log("defender" + defender.health);
+    console.log("attack" + attacker.attack);
+
+    if(defender.health <= 0) {
+        $("#defender").hide();
+    }
+    if(attacker.health <= 0) {
+        alert("game over");
+    }
+
+});
 
 
-
-
-
-    //attack enemy, enemy damage is set, player damage increases each hit
     //defeated enemy, goes away
     //pick new enemy//
     //attack enemy with progressive damage
