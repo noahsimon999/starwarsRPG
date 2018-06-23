@@ -1,3 +1,19 @@
+body {
+    background-image: URL(../images/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+}
+
 img {
     height: 200px;
+}
+
+.container {
+    margin: 0px;
+    padding-left: 50px;
+}
+
+#win #lose {
+    float: left;
 }
