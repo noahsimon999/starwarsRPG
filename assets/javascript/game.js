@@ -26,8 +26,7 @@ $(document).ready(function () {
 
     $( "#attackHeading" ).hide();
     $( "#defendHeading" ).hide();
-    $("charOne").text(char1.health);
-    console.log(char1.health);
+    $("charOne").html("<p>" + char1.health + "</p>");
 
 
 
@@ -176,6 +175,7 @@ $("#attackBtn").on("click", function () {
     defender.health = defender.health - attacker.attack;
     attacker.health = attacker.health - defender.attack;
     attacker.attack = attacker.attack + Math.round(Math.random()*20);
+    $("stats").html("<p>You attack for " + attacker.attack + " damage!</p>");
 
     if(defender.health <= 0) {
         if ((char1.health) <= 0) {

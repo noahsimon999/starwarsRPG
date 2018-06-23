@@ -9,11 +9,13 @@ img {
     height: 200px;
 }
 
+h1 {
+    font-family: 'Anton', sans-serif;
+    margin-top: 50px;
+}
+
 .container {
     margin: 0px;
     padding-left: 50px;
 }
 
-#win #lose {
-    float: left;
-}
