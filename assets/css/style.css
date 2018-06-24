@@ -38,3 +38,7 @@ h1 {
     display: flex;
     flex-direction: row;
 }
+
+#defender #charOneInfo, #charTwoInfo, #charThreeInfo, #charFourInfo {
+    width: 150px;
+}
