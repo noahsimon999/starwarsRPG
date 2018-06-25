@@ -72,6 +72,7 @@ function reset() {
     $( "#attackBtn" ).hide();
     $( "#attackHeading" ).hide();
     $( "#defendHeading" ).hide();
+    $("#stats3").hide();
     $("#charOneInfo").html("HP: " + char1.health);
     $("#charTwoInfo").html("HP: " + char2.health);
     $("#charThreeInfo").html("HP: " + char3.health);
@@ -213,69 +214,71 @@ $("#attackBtn").on("click", function () {
             $("#charFourInfo").html("HP: " + attacker.health);
         }   
 
-///////HP Colors///////
-if (char1.health <= 80) {
-    $("#charOneInfo").css("background-color", "yellow");
-    $("#charOneInfo").css("width", "80%");    
-    $("#charOneInfo").css("color", "black");              
-}
-if (char2.health <= 120) {
-    $("#charTwoInfo").css("background-color", "yellow");
-    $("#charTwoInfo").css("width", "80%");    
-    $("#charTwoInfo").css("color", "black");  
-}
-if(char3.health <= 160) {
-    $("#charThreeInfo").css("background-color", "yellow");
-    $("#charThreeInfo").css("width", "80%");    
-    $("#charThreeInfo").css("color", "black");  
-}
-if(char4.health <= 200) {
-    $("#charFourInfo").css("background-color", "yellow");
-    $("#charFourInfo").css("width", "80%");    
-    $("#charFourInfo").css("color", "black");  
-}
+// health bar
+        if (char1.health <= 80) {
+            $("#charOneInfo").css("background-color", "yellow");
+            $("#charOneInfo").css("width", "80%");    
+            $("#charOneInfo").css("color", "black");              
+        }
+        if (char2.health <= 120) {
+            $("#charTwoInfo").css("background-color", "yellow");
+            $("#charTwoInfo").css("width", "80%");    
+            $("#charTwoInfo").css("color", "black");  
+        }
+        if(char3.health <= 160) {
+            $("#charThreeInfo").css("background-color", "yellow");
+            $("#charThreeInfo").css("width", "80%");    
+            $("#charThreeInfo").css("color", "black");  
+        }
+        if(char4.health <= 200) {
+            $("#charFourInfo").css("background-color", "yellow");
+            $("#charFourInfo").css("width", "80%");    
+            $("#charFourInfo").css("color", "black");  
+        }
 
-if (char1.health <= 50) {
-    $("#charOneInfo").css("background-color", "orange");   
-    $("#charOneInfo").css("width", "50%");  
-    $("#charOneInfo").css("color", "black");               
-}
-if (char2.health <= 75) {
-    $("#charTwoInfo").css("background-color", "orange");
-    $("#charTwoInfo").css("width", "50%");  
-    $("#charTwoInfo").css("color", "black"); 
-}
-if(char3.health <= 100) {
-    $("#charThreeInfo").css("background-color", "orange");
-    $("#charThreeInfo").css("width", "50%");  
-    $("#charThreeInfo").css("color", "black"); 
-}
-if(char4.health <= 125) {
-    $("#charFourInfo").css("background-color", "orange");
-    $("#charFourInfo").css("width", "50%");  
-    $("#charFourInfo").css("color", "black"); 
-}
+        if (char1.health <= 50) {
+            $("#charOneInfo").css("background-color", "orange");   
+            $("#charOneInfo").css("width", "50%");  
+            $("#charOneInfo").css("color", "black");               
+        }
+        if (char2.health <= 75) {
+            $("#charTwoInfo").css("background-color", "orange");
+            $("#charTwoInfo").css("width", "50%");  
+            $("#charTwoInfo").css("color", "black"); 
+        }
+        if(char3.health <= 100) {
+            $("#charThreeInfo").css("background-color", "orange");
+            $("#charThreeInfo").css("width", "50%");  
+            $("#charThreeInfo").css("color", "black"); 
+        }
+        if(char4.health <= 125) {
+            $("#charFourInfo").css("background-color", "orange");
+            $("#charFourInfo").css("width", "50%");  
+            $("#charFourInfo").css("color", "black"); 
+        }
 
-if (char1.health <= 20) {
-    $("#charOneInfo").css("background-color", "red");  
-    $("#charOneInfo").css("width", "20%");   
-    $("#charOneInfo").css("color", "white");              
-}
-if (char2.health <= 30) {
-    $("#charTwoInfo").css("background-color", "red");
-    $("#charTwoInfo").css("width", "20%");   
-    $("#charTwoInfo").css("color", "white")
-}
-if(char3.health <= 40) {
-    $("#charThreeInfo").css("background-color", "red");
-    $("#charThreeInfo").css("width", "20%");   
-    $("#charThreeInfo").css("color", "white")
-}
-if(char4.health <= 50) {
-    $("#charFourInfo").css("background-color", "red");
-    $("#charFourInfo").css("width", "20%");   
-    $("#charFourInfo").css("color", "white")
-}
+        if (char1.health <= 20) {
+            $("#charOneInfo").css("background-color", "red");  
+            $("#charOneInfo").css("width", "20%");   
+            $("#charOneInfo").css("color", "white");              
+        }
+        if (char2.health <= 30) {
+            $("#charTwoInfo").css("background-color", "red");
+            $("#charTwoInfo").css("width", "20%");   
+            $("#charTwoInfo").css("color", "white")
+        }
+        if(char3.health <= 40) {
+            $("#charThreeInfo").css("background-color", "red");
+            $("#charThreeInfo").css("width", "20%");   
+            $("#charThreeInfo").css("color", "white")
+        }
+        if(char4.health <= 50) {
+            $("#charFourInfo").css("background-color", "red");
+            $("#charFourInfo").css("width", "20%");   
+            $("#charFourInfo").css("color", "white")
+        }
+
+// defeated characters
 
         if(defender.health <= 0) {
             if ((char1.health) <= 0) {
@@ -301,6 +304,7 @@ if(char4.health <= 50) {
             
             defender = "";
             
+// win condition
             for ( var i = 0; i < defeated.length; i++) {
                 if (defeated.length === 6) {
                     wins++;
@@ -309,6 +313,8 @@ if(char4.health <= 50) {
                 }
             }
         }
+
+// loss conditions
         if(attacker.health <= 0) {
             losses++;
             $("#stats3").text("Game Over");
