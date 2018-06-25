@@ -39,15 +39,7 @@ $(document).ready(function () {
     $("#charOneInfo, #charTwoInfo, #charThreeInfo, #charFourInfo").css("width", "100%");    
     $("#charOneInfo, #charTwoInfo, #charThreeInfo, #charFourInfo").css("color", "white"); 
 
-    $("#attackBtn").on("click", function () {
-        if (true) {
-            var soundArray = [lightsaber1, lightsaber2, lightsaber3, lightsaber4];
-            var sound = soundArray[Math.floor(Math.random() * soundArray.length)];
-            for (var i = 0; i<soundArray.length; i++) {
-                sound.play();
-            }
-        }
-    });
+ 
 
 //reset
 
@@ -207,6 +199,13 @@ $("#attackBtn").on("click", function () {
         $( "#stats2" ).show();
         $("#stats1").html("<p>You attack for " + attacker.attack + " damage!</p>");
         $("#stats2").html("<p>You took " + defender.attack + " damage!</p>");
+        $("#attackBtn").on("click", function () {
+            var soundArray = [lightsaber1, lightsaber2, lightsaber3, lightsaber4];
+            var sound = soundArray[Math.floor(Math.random() * soundArray.length)];
+            for (var i = 0; i<soundArray.length; i++) {
+                sound.play();
+            }
+        });
         
         if (defender === char1) {
             $("#charOneInfo").html("HP: " + defender.health);
