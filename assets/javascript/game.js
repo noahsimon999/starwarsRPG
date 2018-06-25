@@ -23,7 +23,7 @@ $(document).ready(function () {
 
     var wins = 0;
     var losses = 0;
-    var themeSong = new Audio("assets/soundEffects/lightsaber.mp3");
+    var themeSong = new Audio("assets/soundEffects/Lightsaber.wav");
 
     $( "#attackHeading" ).hide();
     $( "#defendHeading" ).hide();
