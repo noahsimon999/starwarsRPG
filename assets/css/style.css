@@ -38,3 +38,19 @@ h1 {
     display: flex;
     flex-direction: row;
 }
+
+#defender #infoCard1 {
+    width: 150px;
+}
+
+#defender #infoCard2 {
+    width: 150px;
+}
+
+#defender #infoCard3 {
+    width: 150px;
+}
+
+#defender #infoCard4 {
+    width: 150px;
+}
