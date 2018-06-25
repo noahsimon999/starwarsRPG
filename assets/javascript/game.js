@@ -24,8 +24,8 @@ $(document).ready(function () {
     var wins = 0;
     var losses = 0;
     var lightsaber1 = new Audio("assets/soundEffects/Lightsaber.wav");
-    var lightsaber2 = new Audio("assets/soundEffects/Lightsaber2.WAV");
-    var lightsaber3 = new Audio("assets/soundEffects/Lightsaber3.WAV");
+    var lightsaber2 = new Audio("assets/soundEffects/Lightsaber2.wav");
+    var lightsaber3 = new Audio("assets/soundEffects/Lightsaber3.wav");
     var lightsaber4 = new Audio("assets/soundEffects/Lightsaber4.wav");
 
     $( "#attackHeading" ).hide();
