@@ -23,7 +23,10 @@ $(document).ready(function () {
 
     var wins = 0;
     var losses = 0;
-    var themeSong = new Audio("assets/soundEffects/Lightsaber.wav");
+    var lightsaber1 = new Audio("assets/soundEffects/Lightsaber.wav");
+    var lightsaber2 = new Audio("assets/soundEffects/Lightsaber2.wav");
+    var lightsaber3 = new Audio("assets/soundEffects/Lightsaber3.wav");
+    var lightsaber4 = new Audio("assets/soundEffects/Lightsaber4.wav");
 
     $( "#attackHeading" ).hide();
     $( "#defendHeading" ).hide();
@@ -38,7 +41,12 @@ $(document).ready(function () {
 
     $("#attackBtn").on("click", function () {
         if (true) {
-            themeSong.play();
+            var soundArray = [lightsaber1, lightsaber2, lightsaber3, lightsaber4];
+            var sound = soundArray[Math.floor(Math.random() * soundArray.length)];
+            for (var i = 0; i<soundArray.length; i++) {
+                console.log(sound);
+                sound.play();
+            }
         }
     });
 
