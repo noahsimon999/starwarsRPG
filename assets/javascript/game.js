@@ -23,6 +23,7 @@ $(document).ready(function () {
 
     var wins = 0;
     var losses = 0;
+    var themeSong = new Audio("assets/soundEffects/lightsaber.mp3");
 
     $( "#attackHeading" ).hide();
     $( "#defendHeading" ).hide();
@@ -34,6 +35,12 @@ $(document).ready(function () {
     $("#charOneInfo, #charTwoInfo, #charThreeInfo, #charFourInfo").css("background-color", "green");
     $("#charOneInfo, #charTwoInfo, #charThreeInfo, #charFourInfo").css("width", "100%");    
     $("#charOneInfo, #charTwoInfo, #charThreeInfo, #charFourInfo").css("color", "white"); 
+
+    $("#attackBtn").on("click", function () {
+        if (true) {
+            themeSong.play();
+        }
+    });
 
 //reset
 
@@ -303,7 +310,7 @@ $("#attackBtn").on("click", function () {
             }
             
             defender = "";
-            
+
 // win condition
             for ( var i = 0; i < defeated.length; i++) {
                 if (defeated.length === 6) {
