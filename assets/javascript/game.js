@@ -44,7 +44,6 @@ $(document).ready(function () {
             var soundArray = [lightsaber1, lightsaber2, lightsaber3, lightsaber4];
             var sound = soundArray[Math.floor(Math.random() * soundArray.length)];
             for (var i = 0; i<soundArray.length; i++) {
-                console.log(sound);
                 sound.play();
             }
         }
