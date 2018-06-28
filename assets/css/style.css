@@ -54,3 +54,7 @@ h1 {
 #defender #infoCard4 {
     width: 150px;
 }
+
+#charOneInfo, #charTwoInfo, #charThreeInfo, #charFourInfo {
+    transition: all 1s ease-in;
+}
