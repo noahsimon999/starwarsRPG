@@ -338,13 +338,6 @@ $("#attackBtn").on("click", function () {
 
 });
 
-
-    //defeated enemy, goes away
-    //pick new enemy//
-    //attack enemy with progressive damage
-    //defeated enemy, goes away
-    //pick new enemy//
-    //win/lose game//
 })
 
 
